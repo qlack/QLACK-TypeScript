@@ -1,0 +1,117 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+  "forms": {
+      "root": "projects/forms",
+      "sourceRoot": "projects/forms/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/forms/tsconfig.lib.json",
+            "project": "projects/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/forms/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/forms/src/test.ts",
+            "tsConfig": "projects/forms/tsconfig.spec.json",
+            "karmaConfig": "projects/forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/forms/tsconfig.lib.json",
+              "projects/forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },    
+    "QLACK-Typescript-form-validation": {
+      "projectType": "library",
+      "root": "projects/QLACK-Typescript-form-validation",
+      "sourceRoot": "projects/QLACK-Typescript-form-validation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/QLACK-Typescript-form-validation/tsconfig.lib.json",
+            "project": "projects/QLACK-Typescript-form-validation/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/QLACK-Typescript-form-validation/src/test.ts",
+            "tsConfig": "projects/QLACK-Typescript-form-validation/tsconfig.spec.json",
+            "karmaConfig": "projects/QLACK-Typescript-form-validation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/QLACK-Typescript-form-validation/tsconfig.lib.json",
+              "projects/QLACK-Typescript-form-validation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "QNgPubSub": {
+      "projectType": "library",
+      "root": "projects/qng-pub-sub",
+      "sourceRoot": "projects/qng-pub-sub/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/qng-pub-sub/tsconfig.lib.json",
+            "project": "projects/qng-pub-sub/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/qng-pub-sub/src/test.ts",
+            "tsConfig": "projects/qng-pub-sub/tsconfig.spec.json",
+            "karmaConfig": "projects/qng-pub-sub/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/qng-pub-sub/tsconfig.lib.json",
+              "projects/qng-pub-sub/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

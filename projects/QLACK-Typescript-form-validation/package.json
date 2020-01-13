@@ -1,0 +1,11 @@
+{
+  "name": "@qlack/form-validation",
+  "version": "1.0.0",
+  "description": "A library to show back-end validation errors in reactive forms.",
+  "author": "EUROPEAN DYNAMICS SA.",
+  "license": "EUPL-1.2",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
+}
