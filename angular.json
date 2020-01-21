@@ -3,73 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  "forms": {
-      "root": "projects/forms",
-      "sourceRoot": "projects/forms/src",
+  "qlack-typescript-forms": {
+      "root": "projects/qlack-typescript-forms",
+      "sourceRoot": "projects/qlack-typescript-forms/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/forms/tsconfig.lib.json",
-            "project": "projects/forms/ng-package.json"
+            "tsConfig": "projects/qlack-typescript-forms/tsconfig.lib.json",
+            "project": "projects/qlack-typescript-forms/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/forms/ng-package.prod.json"
+              "project": "projects/qlack-typescript-forms/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/forms/src/test.ts",
-            "tsConfig": "projects/forms/tsconfig.spec.json",
-            "karmaConfig": "projects/forms/karma.conf.js"
+            "main": "projects/qlack-typescript-forms/src/test.ts",
+            "tsConfig": "projects/qlack-typescript-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/qlack-typescript-forms/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/forms/tsconfig.lib.json",
-              "projects/forms/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },    
-    "QLACK-Typescript-form-validation": {
-      "projectType": "library",
-      "root": "projects/QLACK-Typescript-form-validation",
-      "sourceRoot": "projects/QLACK-Typescript-form-validation/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/QLACK-Typescript-form-validation/tsconfig.lib.json",
-            "project": "projects/QLACK-Typescript-form-validation/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/QLACK-Typescript-form-validation/src/test.ts",
-            "tsConfig": "projects/QLACK-Typescript-form-validation/tsconfig.spec.json",
-            "karmaConfig": "projects/QLACK-Typescript-form-validation/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/QLACK-Typescript-form-validation/tsconfig.lib.json",
-              "projects/QLACK-Typescript-form-validation/tsconfig.spec.json"
+              "projects/qlack-typescript-forms/tsconfig.lib.json",
+              "projects/qlack-typescript-forms/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -78,33 +43,68 @@
         }
       }
     },
-    "QNgPubSub": {
+    "qlack-typescript-form-validation": {
       "projectType": "library",
-      "root": "projects/qng-pub-sub",
-      "sourceRoot": "projects/qng-pub-sub/src",
+      "root": "projects/qlack-typescript-form-validation",
+      "sourceRoot": "projects/qlack-typescript-form-validation/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/qng-pub-sub/tsconfig.lib.json",
-            "project": "projects/qng-pub-sub/ng-package.json"
+            "tsConfig": "projects/qlack-typescript-form-validation/tsconfig.lib.json",
+            "project": "projects/qlack-typescript-form-validation/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/qng-pub-sub/src/test.ts",
-            "tsConfig": "projects/qng-pub-sub/tsconfig.spec.json",
-            "karmaConfig": "projects/qng-pub-sub/karma.conf.js"
+            "main": "projects/qlack-typescript-form-validation/src/test.ts",
+            "tsConfig": "projects/qlack-typescript-form-validation/tsconfig.spec.json",
+            "karmaConfig": "projects/qlack-typescript-form-validation/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/qng-pub-sub/tsconfig.lib.json",
-              "projects/qng-pub-sub/tsconfig.spec.json"
+              "projects/qlack-typescript-form-validation/tsconfig.lib.json",
+              "projects/qlack-typescript-form-validation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "qlack-typescript-qng-pub-sub": {
+      "projectType": "library",
+      "root": "projects/qlack-typescript-qng-pub-sub",
+      "sourceRoot": "projects/qlack-typescript-qng-pub-sub/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/qlack-typescript-qng-pub-sub/tsconfig.lib.json",
+            "project": "projects/qlack-typescript-qng-pub-sub/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/qlack-typescript-qng-pub-sub/src/test.ts",
+            "tsConfig": "projects/qlack-typescript-qng-pub-sub/tsconfig.spec.json",
+            "karmaConfig": "projects/qlack-typescript-qng-pub-sub/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/qlack-typescript-qng-pub-sub/tsconfig.lib.json",
+              "projects/qlack-typescript-qng-pub-sub/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
