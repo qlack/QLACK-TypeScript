@@ -40,7 +40,6 @@ export class QLACKTypescriptFormValidationService {
     } else {
       fieldFormControl = theForm.controls[erroneousField];
     }
-    fieldFormControl.setValue(null);
     fieldFormControl.setErrors({'incorrect': true, 'message': errorMSG});
   }
 }

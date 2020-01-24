@@ -1,9 +1,9 @@
 {
   "name": "@qlack/forms",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Utility package to work with Angular forms.",
-  "homepage": "https://github.com/eurodyn/qlack2",
-  "bug": "https://github.com/eurodyn/qlack2/issues",
+  "homepage": "https://github.com/qlack/QLACK-TypeScript",
+  "bug": "https://github.com/qlack/QLACK-TypeScript/issues",
   "license": "EUPL-1.2",
   "semantic-release": "semantic-release",
   "publishConfig": {
