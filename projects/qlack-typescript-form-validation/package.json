@@ -1,6 +1,6 @@
 {
   "name": "@qlack/form-validation",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A library to show back-end validation errors in reactive forms.",
   "homepage": "https://github.com/qlack/QLACK-TypeScript",
   "bug": "https://github.com/qlack/QLACK-TypeScript/issues",
