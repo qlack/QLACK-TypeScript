@@ -12,3 +12,10 @@ addons:
 script: 
 - npm run build-all
 - sonar-scanner
+
+notifications:
+  email:
+    recipients:
+      secure: "onaGv8GiBBM2/tfXs+0cxmeyJyWQLT/V9cGo8LsVuGnv4qjuYhsMyDlqHOME2MrzBKNe+DJDa3EeZg+zFqN2ZRc+Yf6qQfIrs88ziDeJxnoX54szx6ad9fENX4NKfR24vm8ZhiHd2bc/GRX52kVaoPqZDl1XvslvZ6aid/i3wQUA6TEqPD2yUBbBT71CaYbWUuf9C+sdyMKvaem9fGNSfs/9/niS+GX0P6Cne1++C9PYE71eKcHbqZJrlY+h23tH2kt5pw3wl5D4PGTj7ZseniEtlGO5tz0jmOJpacA89/VUop/V71BD2+8dWW9UxLjVoVfcJFytaRJIGxM3iTjxBBv8uMS9m0UpoPa/1MYqwSGFkiRRz3+Y8cn/yTugTLjsqSI57fYqEp3+DPVTudMZn4xysJsUhJt94fBJ5JonwTQWcAbPYplN2aVvylmfy6Xe8OTVpFK8XO/Yi6OK+FLNHc86OT/RCXSVWwsd6bLbNieUyNtYRW8072W2r8YtcsxfXZMWMRK1LJUnwLJ+evy73hR7ANpZMrF3OQJS4BILLmGfYpLKBHHwG0gUTkH/F6hXmubfrnexd8Lx1HW+vNI/BG8t91QCp8h0gCgD4AEiC6J//vfrjnz8iOkDJLZ03aF5WEzDxX1xBhIxdd44xOHCYjg3z5nQRV93yzPF8AgQeDw="
+    on_success: change
+    on_failure: change
