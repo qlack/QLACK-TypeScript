@@ -3,24 +3,40 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "module": "es2020",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@qlack/forms": [
+        "dist/qlack/forms/qlack-forms",
+        "dist/qlack/forms"
+      ],
+      "@qlack/form-validation": [
+        "dist/qlack/form-validation/qlack-form-validation",
+        "dist/qlack/form-validation"
+      ],
+      "@qlack/qng-pub-sub": [
+        "dist/qlack/qng-pub-sub/qlack-qng-pub-sub",
+        "dist/qlack/qng-pub-sub"
+      ]
+    }
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }

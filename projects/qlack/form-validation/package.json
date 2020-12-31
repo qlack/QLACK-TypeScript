@@ -1,0 +1,11 @@
+{
+  "name": "@qlack/form-validation",
+  "version": "1.3.0",
+  "peerDependencies": {
+    "@angular/common": "^11.0.5",
+    "@angular/core": "^11.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

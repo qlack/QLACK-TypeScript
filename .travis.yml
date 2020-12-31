@@ -9,9 +9,9 @@ addons:
     token:
       secure: "lYHSp0srlzDZR7rWos2gvcPee3sNg4gsI2oOHZOsSe1sVDfEGpD35QU6Yj9EKLogosT+IXhYoUA3oBwnszfIA7HZZn3uzUF3egnMLEwBD9D/T9IiSOPq97ddgB/X8vYVhZQxvrMjQQtsjs9zpfTiBCmDHY4Gecf8xb67pL8yzkH5s4aJHNK9RSPPoWnPk8fzD5dVf/WdmCsdYXlEPMlmULNamuVBeZ8bxIhbZXJDzeNDa0en2eeqoD1zHggNo271CENagIiiaGT+CCm02J63xm92TvgnC2gJ+yXKYRj61PFn30QGUSh8oONkwglsuNBCJoCBWs/DiWdVrzYfxp3M3QiUmg/mAXHC7vXAp3spFagQfNOIl64Hjbs7EQGoaR1gTcaZjRf+EXReZ1lPeNMPVekfh5BSFflcEjIUGF/N4Mf+7VHlQLU5j10riH7siOzaVJa5d9Yp31Ha9AAmuQaGBARH6BMv8qPOjsR3dpfJ79EwhKoN4NsMK6XXn1vyOAo4jj4BPLw095904HPlUqTUtPLbJiEMxhJprd1buasVNKrJpd056kCRlSLFsNvDZakM/aGAHBLL8evG/51ghG4W8rCuaUkp8/Cl/TJ/Zl52z2cku3FFGAC1Sc5W7NYrDsGY5W7EQQZbYskW1+ljV0gXff/SwYWwO2UZovnE/bKhCuY="
 
-script: 
-- npm run build-all
-- sonar-scanner
+script:
+  - npm run build-all
+  - sonar-scanner
 
 notifications:
   email:

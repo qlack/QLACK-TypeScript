@@ -1,6 +1,6 @@
 # QLACK TypeScript libraries
 
-<p align="center">
+<p>
     <a href="https://travis-ci.org/qlack/QLACK-TypeScript" alt="TravisCI">
         <img src="https://travis-ci.org/qlack/QLACK-TypeScript.svg?branch=master" />
     </a>
@@ -15,7 +15,7 @@ This repository is a collection of utility TypeScript libraries.
 * Go to the root of the project you want to publish.
 * Edit `package.json` to update the version.
 * Go to the root of the QLACK-TS project and execute: `ng build --prod --project {projectname}`, e.g.
-`ng build --prod --project @qlack/forms` 
+  `ng build --prod --project @qlack/forms`
 * Go to the root of the QLACK-TS project under `dist` folder, e.g. `dist/forms` and execute: `npm publish`
 
 ## Build all process
@@ -61,7 +61,7 @@ This repository is a collection of utility TypeScript libraries.
 
 ## Contributors
 
-<p align="center">
+<p>
 	<a href="https://github.com/qlack/QLACK-TypeScript/graphs/contributors">
   		<img src="https://contributors-img.firebaseapp.com/image?repo=qlack/qlack-typescript" />
 	</a>
