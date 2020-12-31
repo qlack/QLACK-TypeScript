@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../../coverage/qlack/qng-pub-sub'),
+      dir: require('path').join(__dirname, '../../../coverage/qlack/qng-pubsub'),
       subdir: '.',
       reporters: [
         { type: 'html' },

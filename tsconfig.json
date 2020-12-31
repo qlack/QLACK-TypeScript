@@ -28,9 +28,9 @@
         "dist/qlack/form-validation/qlack-form-validation",
         "dist/qlack/form-validation"
       ],
-      "@qlack/qng-pub-sub": [
-        "dist/qlack/qng-pub-sub/qlack-qng-pub-sub",
-        "dist/qlack/qng-pub-sub"
+      "@qlack/qng-pubsub": [
+        "dist/qlack/qng-pubsub/qlack-qng-pubsub",
+        "dist/qlack/qng-pubsub"
       ]
     }
   },

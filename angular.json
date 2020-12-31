@@ -83,38 +83,38 @@
         }
       }
     },
-    "@qlack/qng-pub-sub": {
+    "@qlack/qng-pubsub": {
       "projectType": "library",
-      "root": "projects/qlack/qng-pub-sub",
-      "sourceRoot": "projects/qlack/qng-pub-sub/src",
+      "root": "projects/qlack/qng-pubsub",
+      "sourceRoot": "projects/qlack/qng-pubsub/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/qlack/qng-pub-sub/tsconfig.lib.json",
-            "project": "projects/qlack/qng-pub-sub/ng-package.json"
+            "tsConfig": "projects/qlack/qng-pubsub/tsconfig.lib.json",
+            "project": "projects/qlack/qng-pubsub/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/qlack/qng-pub-sub/tsconfig.lib.prod.json"
+              "tsConfig": "projects/qlack/qng-pubsub/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/qlack/qng-pub-sub/src/test.ts",
-            "tsConfig": "projects/qlack/qng-pub-sub/tsconfig.spec.json",
-            "karmaConfig": "projects/qlack/qng-pub-sub/karma.conf.js"
+            "main": "projects/qlack/qng-pubsub/src/test.ts",
+            "tsConfig": "projects/qlack/qng-pubsub/tsconfig.spec.json",
+            "karmaConfig": "projects/qlack/qng-pubsub/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/qlack/qng-pub-sub/tsconfig.lib.json",
-              "projects/qlack/qng-pub-sub/tsconfig.spec.json"
+              "projects/qlack/qng-pubsub/tsconfig.lib.json",
+              "projects/qlack/qng-pubsub/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

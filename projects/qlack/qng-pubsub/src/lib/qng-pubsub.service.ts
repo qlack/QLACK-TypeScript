@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {QPUBSUBLIB} from './qng-pub-sub.tokens';
+import {QPUBSUBLIB} from './qng-pubsub.tokens';
 import {QPubSub} from '@qlack/qpubsub';
 
 /**

@@ -1,9 +1,9 @@
 /*
- * Public API Surface of qng-pub-sub
+ * Public API Surface of qng-pubsub
  */
-export * from './lib/qng-pub-sub.service';
-export * from './lib/qng-pub-sub.module';
-export * from './lib/qng-pub-sub.tokens';
+export * from './lib/qng-pubsub.service';
+export * from './lib/qng-pubsub.module';
+export * from './lib/qng-pubsub.tokens';
 
 
 /**

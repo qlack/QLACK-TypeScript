@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {lodash, QPUBSUBLIB, WINDOW} from './qng-pub-sub.tokens';
+import {lodash, QPUBSUBLIB, WINDOW} from './qng-pubsub.tokens';
 import {QPubSub} from '@qlack/qpubsub';
 
 /**

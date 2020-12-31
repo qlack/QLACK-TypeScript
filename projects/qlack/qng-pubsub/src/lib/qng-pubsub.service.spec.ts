@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { QNgPubSubService } from './qng-pub-sub.service';
+import { QNgPubSubService } from './qng-pubsub.service';
 
 describe('QNgPubSubService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

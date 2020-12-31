@@ -1,9 +1,10 @@
-# @qlack/qng-pub-sub
+# @qlack/qng-pubsub
+`Angular support: 11.0.4`
 
 Npm package of an Angular wrapper for [@qlack/qpubsub](https://www.npmjs.com/package/@qlack/qpubsub)
 
 ## Installing
-`npm install --save @qlack/qng-pub-sub`
+`npm install --save @qlack/qng-pubsub`
 
 ## Usage
 
@@ -16,7 +17,7 @@ providers: [
 ### Import the QNgPubSubModule
 
 ```typescript
-  import {QNgPubSubModule} from '@qlack/qng-pub-sub';
+  import {QNgPubSubModule} from '@qlack/qng-pubsub';
 ```
 ```typescript
   imports: [
@@ -26,7 +27,7 @@ providers: [
 ### Import the QNgPubSubService in your component
 
 ```typescript
-  import {QNgPubSubService} from '@qlack/qng-pub-sub';
+  import {QNgPubSubService} from '@qlack/qng-pubsub';
 ```
 ```typescript
 constructor(private qPubSubService: QNgPubSubService) {

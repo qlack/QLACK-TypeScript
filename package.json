@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "build-all": "npm install && cd projects/qlack/forms && npm install && cd ../../.. && ng build --prod --project @qlack/forms && cd projects/qlack/form-validation && npm install && cd ../../.. && ng build --prod --project @qlack/form-validation && cd projects/qlack/qng-pub-sub && npm install && cd ../../.. && ng build --prod --project @qlack/qng-pub-sub"
+    "build-all": "npm install && cd projects/qlack/forms && npm install && cd ../../.. && ng build --prod --project @qlack/forms && cd projects/qlack/form-validation && npm install && cd ../../.. && ng build --prod --project @qlack/form-validation && cd projects/qlack/qng-pubsub && npm install && cd ../../.. && ng build --prod --project @qlack/qng-pubsub"
   },
   "private": true,
   "dependencies": {
