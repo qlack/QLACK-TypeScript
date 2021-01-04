@@ -3,7 +3,7 @@
 
 This library allows you to bind Java back-end validation messages (JSR 380) to your Angular reactive forms.
 
-# Back-end validation setup
+## Back-end validation setup
 
 The back-end DTO should be annotated with `javax.validation.constraints` annotations as can be seen in
  the following example. 
@@ -52,35 +52,9 @@ public class UserController {
 }
 ```
 
-Finally, you must add an ExceptionHandler for MethodArgumentNotValidException errors so Java validation errors are converted to a JSON forms to be passed to your front-end.
- 
- ```java
-import com.eurodyn.qlack.util.data.filter.JSONFilter;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+The last piece you need is some code that converts your back-end validation errors to a structure that can be understood by this library. This code is provided as a Spring Boot RestControllerAdvice in QLACK Util validation project. You only need to include qlack-util-validation in your dependencies.
 
-@Slf4j
-@RestControllerAdvice
-@RequiredArgsConstructor
-@Order(Ordered.HIGHEST_PRECEDENCE)
-public class ExceptionControllerAdvisor {
-
-  @ExceptionHandler(MethodArgumentNotValidException.class)
-  public ResponseEntity handleValidationException(MethodArgumentNotValidException exception) {
-    return new ResponseEntity<>(JSONFilter.filterDefault(exception.getBindingResult().getAllErrors(), "defaultMessage,objectName,field,rejectedValue,code"),
-        HttpStatus.BAD_REQUEST);
-  }
-}
-```
-
-# Installation
+## Library installation
 
 You need to install the npm module:
 
@@ -88,9 +62,9 @@ You need to install the npm module:
 npm install @qlack/form-validation
 ```
 
-# Usage
+## Usage
 
-## Import the `QFormValidationModule`:
+### Import the `QFormValidationModule`:
 
  You have to import `QFormValidationModule` in the root NgModule of your application.
 
@@ -108,7 +82,7 @@ import {QFormValidationModule} from '@qlack/form-validation';
 export class AppModule { }
 ```
 
-## Inject the `QFormValidationService` where you intend to use it:
+### Inject the `QFormValidationService` where you intend to use it:
 
 ```ts
 import {Component} from '@angular/core';
@@ -124,8 +98,7 @@ export class TestComponent {
 }
 ```
 
-
-## Example
+### Example
 ![](doc/validation.png)  
 *A validation error depicted as a tooltip on the warning/triangle icon*
 
