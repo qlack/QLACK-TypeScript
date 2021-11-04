@@ -1,9 +1,9 @@
 {
   "name": "@qlack/forms",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "peerDependencies": {
-    "@angular/common": "^11.0.4",
-    "@angular/core": "^11.0.4",
+    "@angular/common": "^12.2.12",
+    "@angular/core": "^12.2.12",
     "lodash": "~4.17.20"
   },
   "dependencies": {

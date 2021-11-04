@@ -1,5 +1,5 @@
 # @qlack/form-validation
-`Angular support: 11.0.4`
+`Angular support: 12.2.12`
 
 This library allows you to bind Java back-end validation messages (JSR 380) to your Angular reactive forms.
 

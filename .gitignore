@@ -1,1 +1,8 @@
 /dist/qlack/
+/node_modules/
+/projects/qlack/form-validation/node_modules/tslib/
+/projects/qlack/forms/node_modules/
+/projects/qlack/qng-pubsub/node_modules/
+/projects/qlack/form-validation/node_modules/
+/.idea/
+/QLACK-TypeScript.iml
