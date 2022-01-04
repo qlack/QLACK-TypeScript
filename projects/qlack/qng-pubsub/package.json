@@ -1,16 +1,16 @@
 {
   "name": "@qlack/qng-pubsub",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "peerDependencies": {
-    "@angular/common": "^11.0.4",
-    "@angular/core": "^11.0.4",
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0",
     "@qlack/qpubsub": "^0.0.8",
-    "lodash": "~4.17.20"
+    "lodash-es": "~4.17.21"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.166"
+    "@types/lodash-es": "~4.17.5"
   }
 }

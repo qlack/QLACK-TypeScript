@@ -1,10 +1,27 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@qlack/form-validation": [
+        "dist/qlack/form-validation/qlack-form-validation",
+        "dist/qlack/form-validation"
+      ],
+      "@qlack/forms": [
+        "dist/qlack/forms/qlack-forms",
+        "dist/qlack/forms"
+      ],
+      "@qlack/qng-pubsub": [
+        "dist/qlack/qng-pubsub/qlack-qng-pubsub",
+        "dist/qlack/qng-pubsub"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -13,28 +30,15 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2017",
     "module": "es2020",
     "lib": [
-      "es2018",
+      "es2020",
       "dom"
-    ],
-    "paths": {
-      "@qlack/forms": [
-        "dist/qlack/forms/qlack-forms",
-        "dist/qlack/forms"
-      ],
-      "@qlack/form-validation": [
-        "dist/qlack/form-validation/qlack-form-validation",
-        "dist/qlack/form-validation"
-      ],
-      "@qlack/qng-pubsub": [
-        "dist/qlack/qng-pubsub/qlack-qng-pubsub",
-        "dist/qlack/qng-pubsub"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true

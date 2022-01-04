@@ -12,14 +12,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/qlack/forms/tsconfig.lib.json",
             "project": "projects/qlack/forms/ng-package.json"
           },
           "configurations": {
             "production": {
               "tsConfig": "projects/qlack/forms/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/qlack/forms/tsconfig.lib.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -27,18 +30,6 @@
             "main": "projects/qlack/forms/src/test.ts",
             "tsConfig": "projects/qlack/forms/tsconfig.spec.json",
             "karmaConfig": "projects/qlack/forms/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/qlack/forms/tsconfig.lib.json",
-              "projects/qlack/forms/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
@@ -52,14 +43,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/qlack/form-validation/tsconfig.lib.json",
             "project": "projects/qlack/form-validation/ng-package.json"
           },
           "configurations": {
             "production": {
               "tsConfig": "projects/qlack/form-validation/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/qlack/form-validation/tsconfig.lib.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -67,18 +61,6 @@
             "main": "projects/qlack/form-validation/src/test.ts",
             "tsConfig": "projects/qlack/form-validation/tsconfig.spec.json",
             "karmaConfig": "projects/qlack/form-validation/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/qlack/form-validation/tsconfig.lib.json",
-              "projects/qlack/form-validation/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
@@ -92,14 +74,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/qlack/qng-pubsub/tsconfig.lib.json",
             "project": "projects/qlack/qng-pubsub/ng-package.json"
           },
           "configurations": {
             "production": {
               "tsConfig": "projects/qlack/qng-pubsub/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/qlack/qng-pubsub/tsconfig.lib.json"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -107,18 +92,6 @@
             "main": "projects/qlack/qng-pubsub/src/test.ts",
             "tsConfig": "projects/qlack/qng-pubsub/tsconfig.spec.json",
             "karmaConfig": "projects/qlack/qng-pubsub/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/qlack/qng-pubsub/tsconfig.lib.json",
-              "projects/qlack/qng-pubsub/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
