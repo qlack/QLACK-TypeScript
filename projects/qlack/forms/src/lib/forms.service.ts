@@ -103,10 +103,10 @@ export class QFormsService {
         value = data[filter];
       }
 
-      query += prefix + fieldName + '=' + value;
+      query += prefix + encodeURIComponent(fieldName) + '=' + encodeURIComponent(value);
     }
 
-    return encodeURI(query);
+    return query;
   }
 
   /**
