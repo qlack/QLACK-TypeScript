@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AbstractControl, FormArray, FormGroup} from '@angular/forms';
+import {AbstractControl, UntypedFormArray, UntypedFormGroup} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class QFormValidationService {
   constructor() {
   }
 
-  public validateForm(theForm: FormGroup, validationErrors: any, translateService?: any) {
+  public validateForm(theForm: UntypedFormGroup, validationErrors: any, translateService?: any) {
     validationErrors.forEach((validationError: any) => {
       let originalErrorMessage = validationError.defaultMessage;
       if (translateService) {
@@ -26,7 +26,7 @@ export class QFormValidationService {
     })
   }
 
-  private invalidateFormControl(theForm: FormGroup, validationError: any, errorMSG: string) {
+  private invalidateFormControl(theForm: UntypedFormGroup, validationError: any, errorMSG: string) {
     let erroneousField = validationError.field;
     let fieldFormControl: AbstractControl;
 
@@ -44,7 +44,7 @@ export class QFormValidationService {
       for (let i = 1; i < fields.length; i++) {
         if (fields[i].includes("[")) {
           let parsedArrayField = this.parseArrayField(fields[i]);
-          let formArrayElement = <FormArray>fieldFormControl.get(parsedArrayField.array);
+          let formArrayElement = <UntypedFormArray>fieldFormControl.get(parsedArrayField.array);
           fieldFormControl = formArrayElement.at(parsedArrayField.index);
         } else {
           fieldFormControl = fieldFormControl.get(fields[i])!;
@@ -69,8 +69,8 @@ export class QFormValidationService {
     };
   }
 
-  private getArrayControl(theForm: FormGroup, parsedArrayField: any): AbstractControl {
-    let formArrayElement = <FormArray>theForm.controls[parsedArrayField.array];
+  private getArrayControl(theForm: UntypedFormGroup, parsedArrayField: any): AbstractControl {
+    let formArrayElement = <UntypedFormArray>theForm.controls[parsedArrayField.array];
     return formArrayElement.at(parsedArrayField.index);
   }
 }

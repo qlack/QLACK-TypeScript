@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import * as _ from 'lodash';
-import {FormGroup} from '@angular/forms';
+import {UntypedFormGroup} from '@angular/forms';
 import {QFilterAlias} from './filter-alias';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpEvent, HttpRequest} from '@angular/common/http';
@@ -33,7 +33,7 @@ export class QFormsService {
    * @deprecated This method is deprecated and will be removed in future versions, use
    * dataToQueryString instead.
    */
-  formGroupToQueryString(fb: FormGroup, aliases: QFilterAlias[], includeEmpty: boolean): string {
+  formGroupToQueryString(fb: UntypedFormGroup, aliases: QFilterAlias[], includeEmpty: boolean): string {
     let query = '';
     for (const filter in fb.value) {
       // Skip empty fields if requested to not include them.
@@ -156,7 +156,7 @@ export class QFormsService {
    * @deprecated This method is deprecated and will be removed in future version, use
    * makeQueryStringForData instead.
    */
-  makeQueryString(fb: FormGroup, aliases: QFilterAlias[], includeEmpty: boolean,
+  makeQueryString(fb: UntypedFormGroup, aliases: QFilterAlias[], includeEmpty: boolean,
                   page: number, size: number, sort: string, sortDirection: string): string {
     return this.appendPagingToFilter(this.formGroupToQueryString(fb, aliases, includeEmpty), page,
       size, sort, sortDirection);
@@ -185,7 +185,7 @@ export class QFormsService {
    * @deprecated This method is deprecated and will be removed in future versions. Use the
    * cleanupData method instead.
    */
-  cleanupForm(fb: FormGroup) {
+  cleanupForm(fb: UntypedFormGroup) {
     return _.pickBy(fb.getRawValue(), _.identity);
   }
 
@@ -228,7 +228,7 @@ export class QFormsService {
    * @deprecated This method will be removed in future versions, embed this functionality into your
    * own project.
    */
-  uploadForm(http: HttpClient, fg: FormGroup, url: string, reportProgress: boolean): Observable<HttpEvent<{}>> {
+  uploadForm(http: HttpClient, fg: UntypedFormGroup, url: string, reportProgress: boolean): Observable<HttpEvent<{}>> {
     const formData = new FormData();
     for (const formField in fg.value) {
       formData.append(formField, fg.value[formField]);
