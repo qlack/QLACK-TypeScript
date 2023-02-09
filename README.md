@@ -13,7 +13,7 @@ This repository is a collection of utility TypeScript libraries.
 * Edit `package.json` to update the version.
 * Go to the root of the QLACK-TS project and execute: `ng build --project {projectname}`, e.g.
   `ng build --project @qlack/forms`
-* Go to the root of the QLACK-TS project under `dist` folder, e.g. `dist/forms` and execute: `npm publish`
+* Go to the root of the QLACK-TS project under `dist` folder, e.g. `dist/qlack/forms` and execute: `npm publish`
 
 ## Contributors
 
