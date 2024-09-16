@@ -88,11 +88,13 @@ pipeline {
         stage ('NPM-Login') {
             steps {
                 container (name: 'qlack-typescript-builder') {
-                    // Login to npm registry
-                    if (env.NPM_TOKEN) {
-                        sh 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
-                    } else {
-                        error 'NPM_TOKEN is not available. Exiting...'
+                    script {
+                        // Login to npm registry
+                        if (env.NPM_TOKEN) {
+                            sh 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
+                        } else {
+                            error 'NPM_TOKEN is not available. Exiting...'
+                        }
                     }
                 }
             }
