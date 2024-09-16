@@ -59,12 +59,15 @@ pipeline {
                     sh 'npm install'
 
                     dir('projects/qlack/form-validation') {
+                        sh 'echo "install dependencies for qlack form-validation"'
                         sh 'npm install'
                     }
                     dir('projects/qlack/forms') {
+                        sh 'echo "install dependencies for qlack forms"'
                         sh 'npm install'
                     }
                     dir('projects/qlack/qng-pubsub') {
+                        sh 'echo "install dependencies for qlack qng-pubsub"'
                         sh 'npm install'
                     }
                 }
@@ -73,14 +76,20 @@ pipeline {
         stage ('Build-Qlack') {
             steps {
                 container (name: 'qlack-typescript-builder') {
+                    // install angular cli
+                    sh 'npm install -g @angular/cli'
+                    
                     dir('projects/qlack/form-validation') {
-                        sh 'ng build --project @qlack/form-validation'
+                        sh 'echo "build qlack form-validation"'
+                        sh 'npx ng build --project @qlack/form-validation'
                     }
                     dir('projects/qlack/forms') {
-                        sh 'ng build --project @qlack/forms'
+                        sh 'echo "build qlack forms"'
+                        sh 'npx ng build --project @qlack/forms'
                     }
                     dir('projects/qlack/qng-pubsub') {
-                        sh 'ng build --project @qlack/qng-pubsub'
+                        sh 'echo "build qlack qng-pubsub"'
+                        sh 'npx ng build --project @qlack/qng-pubsub'
                     }
                 }
             }
@@ -99,33 +108,33 @@ pipeline {
                 }
             }
         }
-        // stage ('Publish-Qlack-Form-Validation') {
-        //     steps {
-        //         container (name: 'qlack-typescript-builder') {
-        //             dir('dist/qlack/form-validation') {
-        //                 sh 'npm publish'
-        //             }
-        //         }
-        //     }
-        // }
-        // stage ('Build-Qlack-Forms') {
-        //     steps {
-        //         container (name: 'qlack-typescript-builder') {
-        //             dir('dist/qlack/forms') {
-        //                 sh 'npm publish'
-        //             }
-        //         }
-        //     }
-        // }
-        // stage ('Build-Qlack-Form-Qng-Pubsub') {
-        //     steps {
-        //         container (name: 'qlack-typescript-builder') {
-        //             dir('dist/qlack/qng-pubsub') {
-        //                 sh 'npm publish'
-        //             }
-        //         }
-        //     }
-        // }
+        stage ('Publish-Qlack-Form-Validation') {
+            steps {
+                container (name: 'qlack-typescript-builder') {
+                    dir('dist/qlack/form-validation') {
+                        sh 'npm publish'
+                    }
+                }
+            }
+        }
+        stage ('Build-Qlack-Forms') {
+            steps {
+                container (name: 'qlack-typescript-builder') {
+                    dir('dist/qlack/forms') {
+                        sh 'npm publish'
+                    }
+                }
+            }
+        }
+        stage ('Build-Qlack-Form-Qng-Pubsub') {
+            steps {
+                container (name: 'qlack-typescript-builder') {
+                    dir('dist/qlack/qng-pubsub') {
+                        sh 'npm publish'
+                    }
+                }
+            }
+        }
     }
 }
 
