@@ -53,22 +53,62 @@ pipeline {
         NPM_TOKEN = credentials('qlack-npm-auth-token')
     }
     stages {
+        stage ('NPM Publish Form-Validation') {
+            steps {
+                container (name: 'qlack-typescript-builder') {
+                    script {
+                        env.publishFormValidation = input(message: 'Do you want to publish an npm package for the project "form-validation"?',
+                                    parameters: [booleanParam(name: 'PUBLISH NPM FORM-VALIDATION', defaultValue: false, description: '')])
+                    }
+                }
+            }
+        }
+        stage ('NPM Publish Forms') {
+            steps {
+                container (name: 'qlack-typescript-builder') {
+                    script {
+                        env.publishForms = input(message: 'Do you want to publish an npm package for the project "forms"?',
+                                    parameters: [booleanParam(name: 'PUBLISH NPM FORMS', defaultValue: false, description: '')])
+                    }
+                }
+            }
+        }
+        stage ('NPM Publish Qng-Pubsub') {
+            steps {
+                container (name: 'qlack-typescript-builder') {
+                    script {
+                        env.publishQngPubsub = input(message: 'Do you want to publish an npm package for the project "qng-pubsub"?',
+                                    parameters: [booleanParam(name: 'PUBLISH NPM QNG-PUBSUB', defaultValue: false, description: '')])
+                    }
+                }
+            }
+        }
         stage ('Install-Qlack-Dependencies') {
             steps {
                 container (name: 'qlack-typescript-builder') {
-                    sh 'npm install'
-
-                    dir('projects/qlack/form-validation') {
-                        sh 'echo "install dependencies for qlack form-validation"'
+                    script {
                         sh 'npm install'
-                    }
-                    dir('projects/qlack/forms') {
-                        sh 'echo "install dependencies for qlack forms"'
-                        sh 'npm install'
-                    }
-                    dir('projects/qlack/qng-pubsub') {
-                        sh 'echo "install dependencies for qlack qng-pubsub"'
-                        sh 'npm install'
+                        
+                        if(env.publishFormValidation == 'true'){
+                            dir('projects/qlack/form-validation') {
+                                sh 'echo "install dependencies for qlack form-validation"'
+                                sh 'npm install'
+                            }
+                        }
+                        
+                        if(env.publishForms == 'true'){
+                            dir('projects/qlack/forms') {
+                                sh 'echo "install dependencies for qlack forms"'
+                                sh 'npm install'
+                            }
+                        }
+                        
+                        if(env.publishQngPubsub == 'true'){
+                            dir('projects/qlack/qng-pubsub') {
+                                sh 'echo "install dependencies for qlack qng-pubsub"'
+                                sh 'npm install'
+                            }
+                        }
                     }
                 }
             }
@@ -76,20 +116,30 @@ pipeline {
         stage ('Build-Qlack') {
             steps {
                 container (name: 'qlack-typescript-builder') {
-                    // install angular cli
-                    sh 'npm install -g @angular/cli'
-                    
-                    dir('projects/qlack/form-validation') {
-                        sh 'echo "build qlack form-validation"'
-                        sh 'npx ng build --project @qlack/form-validation'
-                    }
-                    dir('projects/qlack/forms') {
-                        sh 'echo "build qlack forms"'
-                        sh 'npx ng build --project @qlack/forms'
-                    }
-                    dir('projects/qlack/qng-pubsub') {
-                        sh 'echo "build qlack qng-pubsub"'
-                        sh 'npx ng build --project @qlack/qng-pubsub'
+                    script {
+                        // install angular cli
+                        sh 'npm install -g @angular/cli'
+                        
+                        if(env.publishFormValidation == 'true'){
+                            dir('projects/qlack/form-validation') {
+                                sh 'echo "build qlack form-validation"'
+                                sh 'npx ng build --project @qlack/form-validation'
+                            }
+                        }
+
+                        if(env.publishForms == 'true'){
+                            dir('projects/qlack/forms') {
+                                sh 'echo "build qlack forms"'
+                                sh 'npx ng build --project @qlack/forms'
+                            }
+                        }
+
+                        if(env.publishQngPubsub == 'true'){
+                            dir('projects/qlack/qng-pubsub') {
+                                sh 'echo "build qlack qng-pubsub"'
+                                sh 'npx ng build --project @qlack/qng-pubsub'
+                            }
+                        }
                     }
                 }
             }
@@ -109,6 +159,9 @@ pipeline {
             }
         }
         stage ('Publish-Qlack-Form-Validation') {
+            when {
+                expression { env.publishFormValidation == 'true' }
+            }
             steps {
                 container (name: 'qlack-typescript-builder') {
                     dir('dist/qlack/form-validation') {
@@ -118,6 +171,9 @@ pipeline {
             }
         }
         stage ('Build-Qlack-Forms') {
+            when {
+                expression { env.publishForms == 'true' }
+            }
             steps {
                 container (name: 'qlack-typescript-builder') {
                     dir('dist/qlack/forms') {
@@ -127,6 +183,9 @@ pipeline {
             }
         }
         stage ('Build-Qlack-Form-Qng-Pubsub') {
+            when {
+                expression { env.publishQngPubsub == 'true' }
+            }
             steps {
                 container (name: 'qlack-typescript-builder') {
                     dir('dist/qlack/qng-pubsub') {
