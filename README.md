@@ -17,7 +17,7 @@ This repository is a collection of utility TypeScript libraries.
 
 ## Testing local library process
 Once you've made changes to the libraries, you may need to test them inside your application before publishing.
-* Assumming you have already built the libraries you need (see steps above), navigate to each dist folder, e.g. dist\qlack\forms, and execute
+* Assuming you have already built the libraries you need (see steps above), navigate to each dist folder, e.g. dist\qlack\forms, and execute
 `npm link`
 * Inside your project's root folder, change the versions of the corresponding libraries in package.json and execute
  `npm link {projectname}`, e.g. (if you want to link to more than one libraries you should place them in the same command)
