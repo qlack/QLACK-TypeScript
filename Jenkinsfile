@@ -23,6 +23,7 @@ pipeline {
                 securityContext:
                   runAsUser: 0
                   runAsGroup: 0
+                  fsGroup: 0
                 containers:
                 - name: qlack-typescript-builder
                   image: eddevopsd2/ubuntu-dind:dind-mvn3.8.5-jdk17-node18.16-go1.20-buildx-helm-pip
@@ -33,7 +34,6 @@ pipeline {
                   securityContext:
                     privileged: true
                     runAsUser: 0
-                    fsGroup: 0
                 imagePullSecrets:
                 - name: regcred
                 volumes:
