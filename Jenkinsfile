@@ -1,6 +1,7 @@
 pipeline {
     agent {
         kubernetes {
+            inheritFrom 'cicd-agent'
             yaml '''
               apiVersion: v1
               kind: Pod
@@ -8,13 +9,6 @@ pipeline {
                 name: qlack-typescript
                 namespace: jenkins
               spec:
-                tolerations:
-                - key: "jenkins"
-                  operator: "Equal"
-                  value: "agent"
-                  effect: "NoSchedule"
-                nodeSelector:
-                  jenkins-agent: "true"
                 priorityClassName: jenkins-low-priority
                 securityContext:
                   runAsUser: 0
@@ -30,6 +24,13 @@ pipeline {
                   securityContext:
                     privileged: true
                     runAsUser: 0
+                  resources:
+                    requests:
+                      cpu: "1"
+                      memory: "1Gi"
+                    limits:
+                      cpu: "2"
+                      memory: "2Gi"
                 imagePullSecrets:
                 - name: regcred
                 volumes:
@@ -84,21 +85,21 @@ pipeline {
                 container (name: 'qlack-typescript-builder') {
                     script {
                         sh 'npm install'
-                        
+
                         if(env.publishFormValidation == 'true'){
                             dir('projects/qlack/form-validation') {
                                 sh 'echo "install dependencies for qlack form-validation"'
                                 sh 'npm install'
                             }
                         }
-                        
+
                         if(env.publishForms == 'true'){
                             dir('projects/qlack/forms') {
                                 sh 'echo "install dependencies for qlack forms"'
                                 sh 'npm install'
                             }
                         }
-                        
+
                         if(env.publishQngPubsub == 'true'){
                             dir('projects/qlack/qng-pubsub') {
                                 sh 'echo "install dependencies for qlack qng-pubsub"'
@@ -115,7 +116,7 @@ pipeline {
                     script {
                         // install angular cli
                         sh 'npm install -g @angular/cli'
-                        
+
                         if(env.publishFormValidation == 'true'){
                             dir('projects/qlack/form-validation') {
                                 sh 'echo "build qlack form-validation"'
