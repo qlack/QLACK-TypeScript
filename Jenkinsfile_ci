@@ -17,6 +17,9 @@ pipeline {
                 containers:
                 - name: qlack-typescript-builder
                   image: eddevopsd2/ubuntu-dind:dind-mvn3.8.5-jdk17-node18.16-go1.20-buildx-helm-pip
+                  volumeMounts:
+                  - name: sonar-scanner
+                    mountPath: /root/sonar-scanner
                   tty: true
                   securityContext:
                     privileged: true
@@ -30,6 +33,10 @@ pipeline {
                       memory: "2Gi"
                 imagePullSecrets:
                 - name: regcred
+                volumes:
+                - name: sonar-scanner
+                  persistentVolumeClaim:
+                    claimName: sonar-scanner-nfs-pvc
             '''
             workspaceVolume dynamicPVC(accessModes: 'ReadWriteOnce', requestsSize: '10Gi', storageClassName: 'vsphere-csi-sc')
         }
